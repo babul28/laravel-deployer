@@ -22,6 +22,11 @@ add('writable_dirs', ['vendor']);
 
 set('writable_use_sudo', false);
 
+// Set up a deployer task to copy secrets from directory env to /var/www/nama-laravel-project in server.
+task('deploy:secrets', function () {
+	run('cp $HOME/env/production/.env {{deploy_path}}/shared');
+});
+
 // Hosts
 
 host('139.59.99.5')
