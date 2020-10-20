@@ -20,14 +20,15 @@ add('shared_dirs', []);
 // Writable dirs by web server 
 add('writable_dirs', ['vendor']);
 
-set('writable_use_sudo', true);
+set('writable_use_sudo', false);
 
 // Hosts
 
 host('139.59.99.5')
 	->user('deployer')
 	->identityFile('~/.ssh/deployerkey')
-	->set('deploy_path', '/var/www/html/api-mangdropship');
+	->set('deploy_path', '/var/www/html/api-mangdropship')
+	->set('http-user', 'www-data');
 
 // Tasks
 
