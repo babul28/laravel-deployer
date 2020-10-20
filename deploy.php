@@ -20,6 +20,7 @@ add('shared_dirs', []);
 // Writable dirs by web server 
 add('writable_dirs', []);
 
+set('writable_use_sudo', true);
 
 // Hosts
 
