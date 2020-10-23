@@ -22,8 +22,14 @@ add('writable_dirs', ['vendor']);
 
 set('writable_use_sudo', false);
 
-// Hosts
+// Add environtment
+set('env', [
+	'DB_DATABASE' => getenv('DB_DATABASE'),
+	'DB_USERNAME' => getenv('DB_USERNAME'),
+	'DB_PASSWORD' => getenv('DB_PASSWORD')
+]);
 
+// Hosts
 host('139.59.99.5')
 	->user('deployer')
 	->identityFile('~/.ssh/deployerkey')
