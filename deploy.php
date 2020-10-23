@@ -22,13 +22,6 @@ add('writable_dirs', ['vendor']);
 
 set('writable_use_sudo', false);
 
-// Add environtment
-set('env', [
-	'DB_DATABASE' => getenv('DB_DATABASE'),
-	'DB_USERNAME' => getenv('DB_USERNAME'),
-	'DB_PASSWORD' => getenv('DB_PASSWORD')
-]);
-
 // Hosts
 host('139.59.99.5')
 	->user('deployer')
@@ -53,4 +46,4 @@ after('deploy:failed', 'deploy:unlock');
 
 // Migrate database before symlink new release.
 
-before('deploy:symlink', 'artisan:migrate');
+// before('deploy:symlink', 'artisan:migrate');
